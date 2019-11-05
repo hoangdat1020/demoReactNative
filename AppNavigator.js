@@ -8,6 +8,8 @@ import Categories from './screens/Categories';
 import Cart from './screens/Cart';
 import Orders from './screens/Orders';
 import Settings from './screens/Settings';
+import CartIcon from './app/components/CartIcon';
+import { connect } from "react-redux";
 
 const color = {
   ACTIVE: '#147efb',
@@ -32,11 +34,9 @@ const CartStack = createStackNavigator({
 });
 CartStack.navigationOptions = {
   tabBarLabel: 'Cart',
-  tabBarIcon: ({ focused }) => {
-    return <Icon name="ios-cart"
-      size={36}
-      color={focused ? color.ACTIVE : color.INACTIVE}
-    />
+  tabBarIcon: ( ) => {
+  
+    return <CartIcon />;
   }
 };
 const OrderStack = createStackNavigator({ Orders });
@@ -60,11 +60,14 @@ SettingStack.navigationOptions = {
   }
 };
 
-const AppNavigator = createBottomTabNavigator({
-  CategoryStack,
-  CartStack,
-  OrderStack,
-  SettingStack
-})
+const AppNavigator = createBottomTabNavigator(
+  {
+    CategoryStack,
+    CartStack,
+    OrderStack,
+    SettingStack
+  }
+);
+
 
 export default AppNavigator;

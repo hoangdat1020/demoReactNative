@@ -6,11 +6,6 @@ import { formatPrice } from '../../utils/Number';
 export default class ProductListItem extends Component {
  render(){
   const { product,addToCart} = this.props;
-  // onAddToCart=(product)=>{
-  //   this.props.onAddToCart(product);
-  
-  // }
-
   return (
     <View style={styles.shadow}>
       <View style={styles.container}>

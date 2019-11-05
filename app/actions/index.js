@@ -8,3 +8,10 @@ export const actAddToCart=(product,quantity)=>{
         quantity
     }
 };
+export const actSubToCart=(product,quantity)=>{
+    return {
+        type : types.SUB_TO_CART,
+        product,
+        quantity
+    }
+};
