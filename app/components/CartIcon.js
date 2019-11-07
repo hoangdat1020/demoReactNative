@@ -10,18 +10,14 @@ const color = {
 };
 class CartIcon extends Component {
   render() {
-    const {cart} = this.props;
+    const {cart,tintColor} = this.props;
     const number = getNumber(cart);
   
     return (
       <>
       <TextIcons style={styles.cartIcon}>
-        <Icon 
-        //   style={styles.cartIcon}
-          name="ios-cart"
-          size={36}
-          color={color.INACTIVE}
-        />
+      <Icon name="ios-cart" size={25} color={tintColor} />
+    
         </TextIcons>
         {number > 0 && (
           <View

@@ -1,9 +1,10 @@
-import * as types from "./../constants/ActionType";
+import * as types from './../constants/ActionType';
 
 var initialState = [];
 const cart = (state = initialState, action) => {
   var arr = [...state];
-  var { product, quantity } = action;
+  var {product, quantity} = action;
+  console.log(quantity);
   var index = -1;
   var id = 0;
   switch (action.type) {
@@ -14,7 +15,7 @@ const cart = (state = initialState, action) => {
       } else {
         state.push({
           product,
-          quantity
+          quantity,
         });
       }
       return [...state];
@@ -22,17 +23,15 @@ const cart = (state = initialState, action) => {
       index = findProduct(state, product);
       if (index != -1) {
         id = state[index].product.id;
-        console.log(id);
+
         state[index].quantity -= quantity;
         if (state[index].quantity === 0) {
           arr = state.filter(item => item.product.id != id);
-
-          console.log(arr);
           return arr;
         }
       }
       return [...state];
-    //
+
     default:
       return [...state];
   }

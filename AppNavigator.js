@@ -1,73 +1,64 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
-import Icon from 'react-native-vector-icons/Ionicons';
-// import Icon from 'react-native-ionicons';
+import Icon from 'react-native-ionicons';
 import Category from './screens/Category';
 import Categories from './screens/Categories';
-import Cart from './screens/Cart';
-import Orders from './screens/Orders';
-import Settings from './screens/Settings';
+import CartS from './screens/Cart';
+import OrderS from './screens/Orders';
+import SettingS from './screens/Settings';
 import CartIcon from './app/components/CartIcon';
-import { connect } from "react-redux";
+import Details from './screens/Details';
 
-const color = {
-  ACTIVE: '#147efb',
-  INACTIVE: '#ccc'
-}
+const Home = createStackNavigator({
+  Categories: Categories,
+  Category: Category,
+  Details:Details
+});
+const Cart = createStackNavigator({
+  Cart: CartS,
+});
+const Orders = createStackNavigator({
+  Orders: OrderS,
+});
+const Settings = createStackNavigator({
+  Settings: SettingS,
+});
 
-const CategoryStack = createStackNavigator({
-  Categories,
-  Category
-});
-CategoryStack.navigationOptions = {
-  tabBarLabel: 'Home',// thay doi gia tri mac dinh  ban dau la categoryStack
-  tabBarIcon: ({ focused }) => {
-    return <Icon name="ios-planet"
-      size={36}
-      color={focused ? color.ACTIVE : color.INACTIVE}
-    />
+const getTabBarIcon = (navigation, focused, tintColor) => {
+  const {routeName} = navigation.state;
+
+  let iconName;
+  if (routeName === 'Home') {
+    iconName = `ios-planet`;
+  } else if (routeName === 'Settings') {
+    iconName = `ios-options`;
+  } else if (routeName === 'Cart') {
+    iconName = `ios-cart`;
+    return <CartIcon tintColor={tintColor} />;
+  } else if (routeName === 'Orders') {
+    iconName = `ios-wallet`;
   }
-};
-const CartStack = createStackNavigator({
-  Cart
-});
-CartStack.navigationOptions = {
-  tabBarLabel: 'Cart',
-  tabBarIcon: ( ) => {
-  
-    return <CartIcon />;
-  }
-};
-const OrderStack = createStackNavigator({ Orders });
-OrderStack.navigationOptions = {
-  tabBarLabel: 'Orders',
-  tabBarIcon: ({ focused }) => {
-    return <Icon name="ios-wallet"
-      size={36}
-      color={focused ? color.ACTIVE : color.INACTIVE}
-    />
-  }
-};
-const SettingStack = createStackNavigator({ Settings });
-SettingStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => {
-    return <Icon name="ios-cog"
-      size={36}
-      color={focused ? color.ACTIVE : color.INACTIVE}
-    />
-  }
+
+  return <Icon name={iconName} size={25} color={tintColor} />;
 };
 
 const AppNavigator = createBottomTabNavigator(
   {
-    CategoryStack,
-    CartStack,
-    OrderStack,
-    SettingStack
-  }
+    Home,
+    Cart,
+    Orders,
+    Settings,
+  },
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      tabBarIcon: ({focused, tintColor}) =>
+        getTabBarIcon(navigation, focused, tintColor),
+    }),
+    tabBarOptions: {
+      activeTintColor: '#147efb',
+      inactiveTintColor: '#ccc',
+    },
+  },
 );
-
-
 export default AppNavigator;
