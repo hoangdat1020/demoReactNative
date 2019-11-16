@@ -2,20 +2,24 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import AppNavigator from './AppNavigator';
-import {createStore } from 'redux';
-import appReducers from './app/reducers/index';
 import {Provider} from 'react-redux';
-
+import { PersistGate } from 'redux-persist/integration/react';
+import {store,persistor} from './app/store/index';
+import SplashScreen from 'react-native-splash-screen';
+import SwiperO from './screens/SwiperO';
 const AppContainer = createAppContainer(AppNavigator);
-const store = createStore(
-  appReducers
-)
 
 export default class App extends React.Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
   render() {
     return (
       <Provider store={store}>
-    <AppContainer /> 
+        <PersistGate loading={null} persistor={persistor}>
+          <SwiperO/>
+    {/* <AppContainer />  */}
+    </PersistGate>
     </Provider>
     );
   }

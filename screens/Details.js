@@ -16,10 +16,7 @@ export default class Details extends Component {
     };
   }
   componentDidMount() {
-    console.log(
-      'this.props.navigation.getParam(product)',
-      this.props.navigation.getParam('product'),
-    );
+    
     this.setState({
       product: this.props.navigation.getParam('product'),
     });

@@ -13,8 +13,7 @@ export default class CartTotals extends Component {
         var s=0;
         const {products} = this.props;
         for( var i =0; i< products.length ;i++){
-           console.log("chay vao for1");
-           console.log(products[i].product.price);
+      
        s+= products[i].product.price *products[i].quantity;
         }
        

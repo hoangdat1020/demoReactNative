@@ -148,7 +148,6 @@
 				C0C4478B753B31ED802F3C47 /* Pods-AwesomeProjectTests.debug.xcconfig */,
 				B715E5ACB9CCE1A042AFCA34 /* Pods-AwesomeProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -309,6 +308,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

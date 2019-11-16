@@ -4,7 +4,7 @@ var initialState = [];
 const cart = (state = initialState, action) => {
   var arr = [...state];
   var {product, quantity} = action;
-  console.log(quantity);
+
   var index = -1;
   var id = 0;
   switch (action.type) {

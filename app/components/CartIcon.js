@@ -10,14 +10,13 @@ const color = {
 };
 class CartIcon extends Component {
   render() {
-    const {cart,tintColor} = this.props;
+    const {cart, tintColor} = this.props;
     const number = getNumber(cart);
-  
+
     return (
       <>
-      <TextIcons style={styles.cartIcon}>
-      <Icon name="ios-cart" size={25} color={tintColor} />
-    
+        <TextIcons style={styles.cartIcon}>
+          <Icon name="ios-cart" size={25} color={tintColor} />
         </TextIcons>
         {number > 0 && (
           <View
@@ -52,17 +51,13 @@ const mapStateToProps = state => {
 };
 const styles = StyleSheet.create({
   cartIcon: {
-     position: 'absolute',
-  
+    position: 'absolute',
   },
 });
-const TextIcons= styled.Text`
-
-&:focus{
-    
-    color: '#147efb'
-}
-    
+const TextIcons = styled.Text`
+  &:focus {
+    color: '#147efb';
+  }
 `;
 export default connect(
   mapStateToProps,

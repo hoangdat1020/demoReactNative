@@ -32,14 +32,13 @@ class Category extends React.Component {
     } catch (error) {
       console.log(error);
     }
-    // const {products} = this.props;
-    // console.log('products', products)
+ 
   }
 
   render() {
     const {navigation} = this.props;
     const {onAddToCart} = this.props;
-    console.log(onAddToCart);
+ 
     return (
       <FlatList
         data={this.state.products}
