@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, Image, StyleSheet, SafeAreaView} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
-
-
 export default class IphoneX2 extends Component {
   render() {
     return (
@@ -34,53 +32,53 @@ const styles = ScaledSheet.create({
   container: {
     flex: 1,
     position: 'relative',
-    backgroundColor: '#FFC209',
+    backgroundColor: '#FFC209'
   },
   vtextBottomIcon: {
     position: 'absolute',
     width: '104@s',
     height: '26@vs',
     top: '293@vs',
-    left: '136@s',
+    marginLeft: '136@s'
   },
   vtextBottom: {
     position: 'absolute',
     width: '282@s',
     height: '40@vs',
     top: '354@vs',
-    left: '47@s',
+    marginLeft: '47@s'
   },
   textBottom: {
     fontSize: '20@ms',
     lineHeight: '20@ms',
     textAlign: 'center',
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
 
   textBottomIcon: {
     fontSize: '26@ms',
     lineHeight: '26@ms',
     textAlign: 'center',
-    color: '#FFFFFF',
+    color: '#FFFFFF'
   },
   iconCenter: {
     position: 'absolute',
     width: '127@s',
     height: '136.31@vs',
     top: '145@vs',
-    left: '125@s',
+    marginLeft: '125@s'
   },
   vtextTop: {
     position: 'absolute',
     width: '200@s',
     height: '20@vs',
-    left: '88@vs',
-    top: '83@vs',
+    marginLeft: '88@vs',
+    top: '83@vs'
   },
   textTop: {
     fontSize: '20@ms',
     lineHeight: '20@ms',
     textAlign: 'center',
-    color: '#FFFFFF',
-  },
+    color: '#FFFFFF'
+  }
 });

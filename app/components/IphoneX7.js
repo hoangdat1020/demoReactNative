@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Text, View, Image} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 
-export default class IphoneX3 extends Component {
+export default class IphoneX7 extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -10,17 +10,13 @@ export default class IphoneX3 extends Component {
           <View style={styles.viconCenter}>
             <Image
               style={styles.iconCenter}
-              source={require('../../assets/icon/Find.png')}
+              source={require('../../assets/icon/Pain.png')}
               resizeMode="contain"
             />
           </View>
           <View style={styles.vtextBottomIcon}>
-            <Text style={styles.textBottomIcon}>人・チームを探す</Text>
-          </View>
-          <View style={styles.vtextBottom}>
-            <Text style={styles.textBottom}>
-              気になる人やチームを 検索しましょう
-            </Text>
+            <Text style={styles.textBottomIcon}>あなたもクミマス</Text>
+            <Text style={styles.textBottomIcon2}>はじめませんか？</Text>
           </View>
         </View>
       </View>
@@ -36,26 +32,19 @@ const styles = ScaledSheet.create({
   },
   vtextBottomIcon: {
     position: 'absolute',
-    width: '208@s',
-    height: '26@vs',
-    top: '273@vs',
-    marginLeft: '92@s'
+    width: '234@s',
+    height: '52@vs',
+    top: '285@vs',
+    left: '79@s'
   },
-  vtextBottom: {
-    position: 'absolute',
-    width: '184@s',
-    height: '40@vs',
-    top: '323@vs',
-    marginLeft: '109@s'
-  },
-  textBottom: {
-    fontSize: '20@ms',
-    lineHeight: '20@ms',
+  textBottomIcon: {
+    fontSize: '26@ms',
+    lineHeight: '26@ms',
     textAlign: 'center',
     color: '#FFFFFF'
   },
-
-  textBottomIcon: {
+  textBottomIcon2: {
+    marginLeft: '35@s',
     fontSize: '26@ms',
     lineHeight: '26@ms',
     textAlign: 'center',
@@ -63,9 +52,9 @@ const styles = ScaledSheet.create({
   },
   iconCenter: {
     position: 'absolute',
-    width: '84@s',
-    height: '82.5@vs',
-    top: '163@vs',
-    marginLeft: '146@s'
+    width: '73@s',
+    height: '73@vs',
+    top: '180@vs',
+    marginLeft: '157@s'
   }
 });

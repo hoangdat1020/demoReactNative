@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Text, View, Image} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 
-export default class IphoneX3 extends Component {
+export default class IphoneX4 extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -10,16 +10,16 @@ export default class IphoneX3 extends Component {
           <View style={styles.viconCenter}>
             <Image
               style={styles.iconCenter}
-              source={require('../../assets/icon/Find.png')}
+              source={require('../../assets/icon/Calen.png')}
               resizeMode="contain"
             />
           </View>
           <View style={styles.vtextBottomIcon}>
-            <Text style={styles.textBottomIcon}>人・チームを探す</Text>
+            <Text style={styles.textBottomIcon}>ニュースを見る</Text>
           </View>
           <View style={styles.vtextBottom}>
             <Text style={styles.textBottom}>
-              気になる人やチームを 検索しましょう
+              最新のニュースを 確認しましょう
             </Text>
           </View>
         </View>
@@ -36,17 +36,17 @@ const styles = ScaledSheet.create({
   },
   vtextBottomIcon: {
     position: 'absolute',
-    width: '208@s',
+    width: '182@s',
     height: '26@vs',
     top: '273@vs',
-    marginLeft: '92@s'
+    left: '105@s'
   },
   vtextBottom: {
     position: 'absolute',
-    width: '184@s',
+    width: '153@s',
     height: '40@vs',
     top: '323@vs',
-    marginLeft: '109@s'
+    left: '124@s'
   },
   textBottom: {
     fontSize: '20@ms',
@@ -63,9 +63,9 @@ const styles = ScaledSheet.create({
   },
   iconCenter: {
     position: 'absolute',
-    width: '84@s',
-    height: '82.5@vs',
-    top: '163@vs',
-    marginLeft: '146@s'
+    width: '86@s',
+    height: '66@vs',
+    top: '181@vs',
+    marginLeft: '141@s'
   }
 });

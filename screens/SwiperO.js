@@ -1,37 +1,37 @@
+/* eslint-disable no-dupe-keys */
 import React, {Component} from 'react';
-import {Text, View, Image, Dimensions, SafeAreaView} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 import IphoneX2 from '../app/components/IphoneX2';
 import IphoneX3 from '../app/components/IphoneX3';
+import IphoneX4 from '../app/components/IphoneX4';
+import IphoneX5 from '../app/components/IphoneX5';
+import IphoneX6 from '../app/components/IphoneX6';
+import IphoneX7 from '../app/components/IphoneX7';
 import ButtonSwiper from '../app/components/vButtonSwiper';
 import Swiper from 'react-native-swiper';
-
-const {width} = Dimensions.get('window');
-
 const styles = ScaledSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF'
   },
 
   wrapperTop: {
-    flex: 1.5,
+    flex: 1.5
   },
   wrapperBottom: {
-    flex: 1,
-
+    flex: 1
   },
   slide: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent'
   },
-
 
   text: {
     color: '#fff',
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
 
   styleDot: {
@@ -43,13 +43,13 @@ const styles = ScaledSheet.create({
     marginRight: 3,
     marginTop: 3,
     marginBottom: 3,
-    backgroundColor: '#FFDA6B',
+    backgroundColor: '#FFDA6B'
   },
   styleActiveDot: {
     width: 17,
     height: 3,
-    backgroundColor: '#FFFFFF',
-  },
+    backgroundColor: '#FFFFFF'
+  }
 });
 
 export default class extends Component {
@@ -62,16 +62,15 @@ export default class extends Component {
             activeDot={<View style={styles.styleActiveDot} />}>
             <IphoneX2 />
             <IphoneX3 />
-            <View style={styles.slide3}>
-              <Text style={styles.text}>And simple</Text>
-            </View>
-          </Swiper >
+            <IphoneX4 />
+            <IphoneX5 />
+            <IphoneX6 />
+            <IphoneX7 />
+          </Swiper>
         </View>
 
         <View style={styles.wrapperBottom}>
           <ButtonSwiper />
-          
-          
         </View>
       </SafeAreaView>
     );

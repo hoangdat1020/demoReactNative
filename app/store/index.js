@@ -5,7 +5,7 @@ import {createStore} from 'redux';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['user'],
+  whitelist: ['user']
 };
 const persistedReducer = persistReducer(persistConfig, appReducers);
 const store = createStore(persistedReducer);
