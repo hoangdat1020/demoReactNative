@@ -39,14 +39,14 @@ const styles = ScaledSheet.create({
     width: '312@s',
     height: '26@vs',
     top: '273@vs',
-    left: '40@s'
+    marginLeft: '30@s'
   },
   vtextBottom: {
     position: 'absolute',
     width: '305@s',
     height: '40@vs',
     top: '323@vs',
-    marginLeft: '45@s'
+    marginLeft: '30@s'
   },
   textBottom: {
     fontSize: '20@ms',

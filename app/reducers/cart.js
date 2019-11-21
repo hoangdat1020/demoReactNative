@@ -1,32 +1,33 @@
-import * as types from './../constants/ActionType';
+/* eslint-disable no-shadow */
+/* eslint-disable no-param-reassign */
+import * as types from '../constants/ActionType';
 
-var initialState = [];
+const initialState = [];
 const cart = (state = initialState, action) => {
-  var arr = [...state];
-  var {product, quantity} = action;
-
-  var index = -1;
-  var id = 0;
+  let arr = [...state];
+  const {product, quantity} = action;
+  let index = -1;
+  let id = 0;
   switch (action.type) {
     case types.ADD_TO_CART:
       index = findProduct(state, product);
-      if (index != -1) {
+      if (index !== -1) {
         state[index].quantity += quantity;
       } else {
         state.push({
           product,
-          quantity,
+          quantity
         });
       }
       return [...state];
     case types.SUB_TO_CART:
       index = findProduct(state, product);
-      if (index != -1) {
+      if (index !== -1) {
         id = state[index].product.id;
 
         state[index].quantity -= quantity;
         if (state[index].quantity === 0) {
-          arr = state.filter(item => item.product.id != id);
+          arr = state.filter(item => item.product.id !== id);
           return arr;
         }
       }
@@ -37,10 +38,10 @@ const cart = (state = initialState, action) => {
   }
 };
 
-var findProduct = (cart, product) => {
-  var index = -1;
+const findProduct = (cart, product) => {
+  let index = -1;
   if (cart.length > 0) {
-    for (var i = 0; i < cart.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
       if (cart[i].product.id === product.id) {
         index = i;
         break;

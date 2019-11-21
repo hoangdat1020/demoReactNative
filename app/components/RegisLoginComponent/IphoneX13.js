@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 import ButtonS from '../Button';
+import ModalDropdown from 'react-native-modal-dropdown';
 
 export default class IphoneX13 extends Component {
   render() {
@@ -11,6 +12,69 @@ export default class IphoneX13 extends Component {
           <Text style={styles.text}>クミマスへようこそ！</Text>
         </View>
         <Text style={styles.textTop}>基本情報を入力してください</Text>
+        <View style={styles.dropdown}>
+          <View style={styles.styleDrop}>
+            <ModalDropdown
+              style={styles.style}
+              textStyle={styles.styleText}
+              dropdownStyle={styles.dropdownStyle}
+              dropdownTextStyle={{fontSize: 20}}
+              options={['option 1', 'option 2']}
+              defaultValue={'氏名（ニックネーム可'}
+            />
+            <Image
+              style={styles.iconCenter}
+              source={require('../../../assets/icon/Drop.png')}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.styleDrop}>
+            <ModalDropdown
+              style={styles.style}
+              textStyle={styles.styleText}
+              dropdownStyle={styles.dropdownStyle}
+              dropdownTextStyle={{fontSize: 20}}
+              options={['option 1', 'option 2']}
+              defaultValue={'都道府県'}
+            />
+            <Image
+              style={styles.iconCenter}
+              source={require('../../../assets/icon/Drop.png')}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.styleDrop}>
+            <ModalDropdown
+              style={styles.style}
+              textStyle={styles.styleText}
+              dropdownStyle={styles.dropdownStyle}
+              dropdownTextStyle={{fontSize: 20}}
+              options={['option 1', 'option 2']}
+              // defaultIndex={-1}
+              defaultValue={'性別'}
+            />
+            <Image
+              style={styles.iconCenter}
+              source={require('../../../assets/icon/Drop.png')}
+              resizeMode="contain"
+            />
+          </View>
+          <View style={styles.styleDrop}>
+            <ModalDropdown
+              style={styles.style}
+              textStyle={styles.styleText}
+              dropdownStyle={styles.dropdownStyle}
+              dropdownTextStyle={{fontSize: 20}}
+              options={['option 1', 'option 2']}
+              defaultValue={'生年月日'}
+            />
+            <Image
+              style={styles.iconCenter}
+              source={require('../../../assets/icon/Drop.png')}
+              resizeMode="contain"
+            />
+          </View>
+        </View>
         <View style={styles.button}>
           <ButtonS
             color="#FFC209"
@@ -60,5 +124,34 @@ const styles = ScaledSheet.create({
     lineHeight: '16@ms',
     textAlign: 'center',
     color: '#666666'
+  },
+  dropdown: {
+    position: 'absolute',
+    top: '235@vs',
+    marginLeft: '30@s'
+  },
+  dropdownStyle: {
+    width: '290@s',
+    height: '100@vs'
+  },
+  style: {
+    marginBottom: 34,
+    height: 30,
+    width: 335,
+    borderBottomColor: '#C5C5C5',
+    borderBottomWidth: 1
+  },
+  styleText: {
+    color: '#666666',
+    fontSize: 16,
+    paddingBottom: 9,
+    lineHeight: 16
+  },
+  iconCenter: {
+    position: 'absolute',
+    width: '3@s',
+    height: '5@vs',
+    top: '10@vs',
+    marginLeft: '289@s'
   }
 });

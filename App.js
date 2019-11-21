@@ -1,15 +1,14 @@
 import React from 'react';
-//import {StyleSheet} from 'react-native';
 import {createAppContainer} from 'react-navigation';
-import AppNavigator from './AppNavigator';
 import {Provider} from 'react-redux';
+import AppNavigator from './AppNavigator';
 import {PersistGate} from 'redux-persist/integration/react';
 import {store, persistor} from './app/store/index';
 import SplashScreen from 'react-native-splash-screen';
+import StackAppNavi from './StackAppNavigator';
 import SwiperO from './screens/SwiperO';
 import IphoneX13 from './app/components/RegisLoginComponent/IphoneX13';
-// const AppContainer = createAppContainer(AppNavigator);
-
+const AppContainer = createAppContainer(StackAppNavi);
 export default class App extends React.Component {
   componentDidMount() {
     SplashScreen.hide();
@@ -27,14 +26,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: 'stretch',
-//     backgroundColor: '#fff',
-//     justifyContent: 'center',
-//     paddingLeft: 16,
-//     paddingRight: 16
-//   }
-// });

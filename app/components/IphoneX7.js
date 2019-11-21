@@ -35,7 +35,7 @@ const styles = ScaledSheet.create({
     width: '234@s',
     height: '52@vs',
     top: '285@vs',
-    left: '79@s'
+    marginLeft: '69@s'
   },
   textBottomIcon: {
     fontSize: '26@ms',

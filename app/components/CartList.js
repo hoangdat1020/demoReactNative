@@ -1,17 +1,10 @@
-import React, { Component } from "react";
-import {
-  Text,
-  StyleSheet,
-  FlatList,
-  View,
-  Image,
-  TouchableOpacity
-} from "react-native";
-import { formatPrice } from "../../utils/Number";
+import React, {Component} from 'react';
+import {Text, StyleSheet, View, Image, TouchableOpacity} from 'react-native';
+import {formatPrice} from '../../utils/Number';
 
 export default class CartList extends Component {
   render() {
-    const { cart, inCreToCart, subToCart } = this.props;
+    const {cart, inCreToCart, subToCart} = this.props;
 
     return (
       <View style={styles.shadow}>
@@ -19,7 +12,7 @@ export default class CartList extends Component {
           <View style={styles.test}>
             <Image
               style={styles.img}
-              source={{ uri: cart.product.images[0].url }}
+              source={{uri: cart.product.images[0].url}}
             />
           </View>
 
@@ -31,11 +24,11 @@ export default class CartList extends Component {
               </Text>
               {/* <Text > Quantity : {cart.quantity}</Text> */}
               <TouchableOpacity onPress={() => inCreToCart(cart.product)}>
-                <Text style={{fontSize:20}}>+ </Text>
+                <Text style={{fontSize: 20}}>+ </Text>
               </TouchableOpacity>
-              <Text style={{fontSize:20}}> {cart.quantity}</Text>
+              <Text style={{fontSize: 20}}> {cart.quantity}</Text>
               <TouchableOpacity onPress={() => subToCart(cart.product)}>
-                <Text style={{fontSize:20}}> -</Text>
+                <Text style={{fontSize: 20}}> -</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -45,24 +38,17 @@ export default class CartList extends Component {
   }
 }
 const styles = StyleSheet.create({
-  cartText: {
-    textTransform: "uppercase",
-    fontSize: 16,
-    color: "#2f95dc"
-  },
   shadow: {
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 10,
-    shadowOffset: { width: 0, height: 0 },
-    
+    shadowOffset: {width: 0, height: 0}
   },
   container: {
     marginBottom: 20,
     borderRadius: 4,
-    backgroundColor: "#FFF",
-    overflow: "hidden",
-    
+    backgroundColor: '#FFF',
+    overflow: 'hidden'
   },
 
   info: {
@@ -81,12 +67,12 @@ const styles = StyleSheet.create({
   priceRow: {
     marginRight: 15,
     fontSize: 30,
-    flexDirection: "row",
-    alignItems: "center"
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   price: {
     fontSize: 16,
-    color: "#888",
+    color: '#888',
     flex: 1
   }
 });

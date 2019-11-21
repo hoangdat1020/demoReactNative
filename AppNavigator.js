@@ -9,20 +9,31 @@ import OrderS from './screens/Orders';
 import SettingS from './screens/Settings';
 import CartIcon from './app/components/CartIcon';
 import Details from './screens/Details';
-
-const Home = createStackNavigator({
-  Categories: Categories,
-  Category: Category,
-  Details:Details
-});
+const Home = createStackNavigator(
+  {
+    Categories: {
+      screen: Categories,
+      navigationOptions: {
+        title: 'Home'
+      }
+    },
+    Category,
+    Details
+  },
+  {
+    navigationOptions: {
+      header: null
+    }
+  }
+);
 const Cart = createStackNavigator({
-  Cart: CartS,
+  Cart: CartS
 });
 const Orders = createStackNavigator({
-  Orders: OrderS,
+  Orders: OrderS
 });
 const Settings = createStackNavigator({
-  Settings: SettingS,
+  Settings: SettingS
 });
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
@@ -48,17 +59,17 @@ const AppNavigator = createBottomTabNavigator(
     Home,
     Cart,
     Orders,
-    Settings,
+    Settings
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
       tabBarIcon: ({focused, tintColor}) =>
-        getTabBarIcon(navigation, focused, tintColor),
+        getTabBarIcon(navigation, focused, tintColor)
     }),
     tabBarOptions: {
       activeTintColor: '#147efb',
-      inactiveTintColor: '#ccc',
-    },
-  },
+      inactiveTintColor: '#ccc'
+    }
+  }
 );
 export default AppNavigator;

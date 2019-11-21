@@ -1,34 +1,30 @@
-import * as types from './../constants/ActionType';
-
-
-var initialState = [
-    {
-        username : "admin",
-        password : "admin"
-    }
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-fallthrough */
+import * as types from '../constants/ActionType';
+const initialState = [
+  {
+    username: null,
+    password: null
+  }
 ];
-const user =(state=initialState,action)=>{
-    switch (action.type){
-        case types.ADD_TO_PERSIST :
-            
-            return [...state];
+const user = (state = initialState, action) => {
+  const {username, password} = action;
+  switch (action.type) {
+    case types.ADD_TO_PERSIST:
+      if (username && password) {
+        // state.push({
+        //   username,
+        //   password
+        // });
+        state[0].username = username;
+        state[0].password = password;
 
+        alert('OK');
+      }
+      return [...state];
 
-        default : return [...state];
-    }
-}
-
+    default:
+      return [...state];
+  }
+};
 export default user;
-//
-// switch (action.type) {
-//     case types.ADD_TO_CART:
-//       index = findProduct(state, product);
-//       if (index != -1) {
-//         state[index].quantity += quantity;
-//       } else {
-//         state.push({
-//           product,
-//           quantity,
-//         });
-//       }
-//       return [...state];

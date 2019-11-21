@@ -1,42 +1,41 @@
-
-import React, { Component } from 'react'
-import { Text } from 'react-native';
+/* eslint-disable react/destructuring-assignment */
+import React, {Component} from 'react';
+import {Text} from 'react-native';
 import {connect} from 'react-redux';
 
- class OrdersScreen extends Component {
+class OrdersScreen extends Component {
   static navigationOptions = {
     title: 'Orders'
   };
+
   constructor(props) {
     super(props);
     this.state = {
-      user: [],
+      user: []
     };
   }
+
   componentDidMount() {
     try {
-         var userProps= this.props.user;
+      const userProps = this.props.user;
       this.setState({
-        user: [...userProps],
+        user: [...userProps]
       });
     } catch (error) {
       console.log(error);
     }
- 
   }
+
   render() {
-    
     console.log(this.state.user);
-    return <Text>Orders</Text>
+    return <Text>Orders</Text>;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
+    user: state.user
   };
 };
 
-export default connect(
-  mapStateToProps
-)(OrdersScreen);
+export default connect(mapStateToProps)(OrdersScreen);

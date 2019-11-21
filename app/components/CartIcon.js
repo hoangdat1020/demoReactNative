@@ -1,13 +1,10 @@
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
 import React, {Component} from 'react';
-import {Text, StyleSheet, FlatList, View, Image} from 'react-native';
+import {Text, StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-
-const color = {
-  ACTIVE: '#147efb',
-  INACTIVE: '#ccc',
-};
 class CartIcon extends Component {
   render() {
     const {cart, tintColor} = this.props;
@@ -27,7 +24,7 @@ class CartIcon extends Component {
               position: 'relative',
               top: -10,
               right: -15,
-              borderRadius: 10,
+              borderRadius: 10
             }}>
             <Text style={{color: 'white', margin: 2}}> {number}</Text>
           </View>
@@ -37,7 +34,7 @@ class CartIcon extends Component {
   }
 }
 var getNumber = cart => {
-  var s = 0;
+  let s = 0;
   for (var i = 0; i < cart.length; i++) {
     s += cart[i].quantity;
   }
@@ -46,20 +43,17 @@ var getNumber = cart => {
 
 const mapStateToProps = state => {
   return {
-    cart: state.cart,
+    cart: state.cart
   };
 };
 const styles = StyleSheet.create({
   cartIcon: {
-    position: 'absolute',
-  },
+    position: 'absolute'
+  }
 });
 const TextIcons = styled.Text`
   &:focus {
     color: '#147efb';
   }
 `;
-export default connect(
-  mapStateToProps,
-  null,
-)(CartIcon);
+export default connect(mapStateToProps, null)(CartIcon);

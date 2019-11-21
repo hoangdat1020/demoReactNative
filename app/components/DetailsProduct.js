@@ -1,11 +1,7 @@
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable react/destructuring-assignment */
 import React, {Component} from 'react';
-import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import {formatPrice} from '../../utils/Number';
 import {connect} from 'react-redux';
 import {actAddToCart} from '../actions/index';
@@ -14,17 +10,19 @@ class DetailsItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      count: 0
     };
   }
+
   incrementCount = () => {
     this.setState({
-      count: this.state.count + 1,
+      count: this.state.count + 1
     });
   };
+
   decrementCount = () => {
     this.setState({
-      count: this.state.count - 1,
+      count: this.state.count - 1
     });
   };
 
@@ -68,7 +66,7 @@ class DetailsItem extends Component {
           style={{
             backgroundColor: '#147efb',
             borderRadius: 20,
-            marginHorizontal: 40,
+            marginHorizontal: 40
           }}
           onPress={() => inCreToCart(product, this.state.count)}>
           <Text style={styles.actionText}> Mua ngay</Text>
@@ -79,21 +77,18 @@ class DetailsItem extends Component {
 }
 const mapStateToProps = state => {
   return {
-    cart: state.cart,
+    cart: state.cart
   };
 };
-const mapEventToCart = (dispatch, props) => {
+const mapEventToCart = dispatch => {
   return {
     inCreToCart: (product, count) => {
       dispatch(actAddToCart(product, count));
-    },
+    }
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapEventToCart,
-)(DetailsItem);
+export default connect(mapStateToProps, mapEventToCart)(DetailsItem);
 
 const styles = StyleSheet.create({
   actionText: {
@@ -101,50 +96,43 @@ const styles = StyleSheet.create({
     padding: 5,
     fontSize: 30,
     color: 'white',
-    textAlign: 'center',
-  },
-  cartText: {
-    textTransform: 'uppercase',
-    fontSize: 16,
-    color: '#2f95dc',
+    textAlign: 'center'
   },
   shadow: {
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 10,
-    shadowOffset: {width: 0, height: 0},
+    shadowOffset: {width: 0, height: 0}
   },
   container: {
     marginHorizontal: 16,
     marginVertical: 16,
     borderRadius: 4,
     backgroundColor: '#FFF',
-    overflow: 'hidden',
+    overflow: 'hidden'
   },
-
   info: {
-    padding: 8,
+    padding: 8
   },
   img: {
     height: 150,
 
     borderTopLeftRadius: 4,
-    borderBottomLeftRadius: 4,
+    borderBottomLeftRadius: 4
   },
   name: {
     fontSize: 16,
-    marginBottom: 8,
+    marginBottom: 8
   },
   priceRow: {
     marginRight: 15,
     fontSize: 30,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   price: {
     fontSize: 16,
     color: '#888',
-    flex: 1,
-  },
+    flex: 1
+  }
 });
-

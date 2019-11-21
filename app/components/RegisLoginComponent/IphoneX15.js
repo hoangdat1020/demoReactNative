@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, Image,View} from 'react-native';
+import {Text, Image, View} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 import ButtonS from '../Button';
 

@@ -10,10 +10,12 @@ import IphoneX6 from '../app/components/IphoneX6';
 import IphoneX7 from '../app/components/IphoneX7';
 import ButtonSwiper from '../app/components/vButtonSwiper';
 import Swiper from 'react-native-swiper';
+import AppIntro from 'react-native-app-intro';
 const styles = ScaledSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'column'
   },
 
   wrapperTop: {
@@ -57,16 +59,28 @@ export default class extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.wrapperTop}>
-          <Swiper
+          {/* <Swiper
             dot={<View style={styles.styleDot} />}
-            activeDot={<View style={styles.styleActiveDot} />}>
-            <IphoneX2 />
-            <IphoneX3 />
-            <IphoneX4 />
-            <IphoneX5 />
-            <IphoneX6 />
-            <IphoneX7 />
-          </Swiper>
+            activeDot={<View style={styles.styleActiveDot} />}> */}
+          <AppIntro
+            dotColor="orange"
+            dotStyle={{
+              width: 13,
+              height: 13,
+              borderRadius: 7,
+              marginLeft: 7,
+              marginRight: 7,
+              marginTop: 7,
+              marginBottom: 7
+            }}>
+            <IphoneX2 style={{height: 482}} />
+            <IphoneX3 style={{height: 482}} />
+            <IphoneX4 style={{height: 482}} />
+            <IphoneX5 style={{height: 482}} />
+            <IphoneX6 style={{height: 482}} />
+            <IphoneX7 style={{height: 482}} />
+          </AppIntro>
+          {/* </Swiper> */}
         </View>
 
         <View style={styles.wrapperBottom}>
