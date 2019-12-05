@@ -1,27 +1,21 @@
 import React, {Component} from 'react';
 import {Text, View, Image} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
-
-export default class IphoneX3 extends Component {
+export default class Slide2 extends Component {
   render() {
-    const {
-      sourceImg,
-      textBottomIcon,
-      textBottom,
-      heightTextBottom
-    } = this.props;
+    const {textTop, sourceImg, textBottomIcon, textBottom} = this.props;
     return (
       <View style={styles.container}>
-        <View
-          style={{
-            alignItems: 'center'
-          }}>
+        <View style={styles.vtextTop}>
+          <Text style={styles.textTop}>{textTop}</Text>
+        </View>
+        <View>
           <Image
             style={styles.iconCenter}
             source={sourceImg}
             resizeMode="contain"
           />
-          <View style={[styles.vtextBottomIcon, {height: heightTextBottom}]}>
+          <View style={styles.vtextBottomIcon}>
             <Text style={styles.textBottomIcon}>{textBottomIcon}</Text>
           </View>
           <View style={styles.vtextBottom}>
@@ -32,7 +26,6 @@ export default class IphoneX3 extends Component {
     );
   }
 }
-
 const styles = ScaledSheet.create({
   container: {
     flex: 1,
@@ -40,12 +33,18 @@ const styles = ScaledSheet.create({
     backgroundColor: '#FFC209'
   },
   vtextBottomIcon: {
-    top: '190@vs',
-    height: '26@vs'
+    position: 'absolute',
+    width: '104@s',
+    height: '26@vs',
+    top: '293@vs',
+    marginLeft: '136@s'
   },
   vtextBottom: {
+    position: 'absolute',
+    width: '282@s',
     height: '40@vs',
-    top: '214@vs'
+    top: '354@vs',
+    marginLeft: '47@s'
   },
   textBottom: {
     fontSize: '20@ms',
@@ -53,6 +52,7 @@ const styles = ScaledSheet.create({
     textAlign: 'center',
     color: '#FFFFFF'
   },
+
   textBottomIcon: {
     fontSize: '26@ms',
     lineHeight: '26@ms',
@@ -60,8 +60,23 @@ const styles = ScaledSheet.create({
     color: '#FFFFFF'
   },
   iconCenter: {
-    width: '84@s',
-    height: '82.5@vs',
-    top: '163@vs'
+    position: 'absolute',
+    width: '127@s',
+    height: '136.31@vs',
+    top: '145@vs',
+    marginLeft: '125@s'
+  },
+  vtextTop: {
+    position: 'absolute',
+    width: '200@s',
+    height: '20@vs',
+    marginLeft: '88@vs',
+    top: '83@vs'
+  },
+  textTop: {
+    fontSize: '20@ms',
+    lineHeight: '20@ms',
+    textAlign: 'center',
+    color: '#FFFFFF'
   }
 });

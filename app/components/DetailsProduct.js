@@ -29,14 +29,12 @@ class DetailsItem extends Component {
   render() {
     const {product} = this.props;
     const {inCreToCart} = this.props;
-
     return (
       <View style={styles.shadow}>
         <View style={styles.container}>
           <View style={styles.test}>
             <Image style={styles.img} source={{uri: product.images[0].url}} />
           </View>
-
           <View style={styles.info}>
             <Text style={styles.name}>{product.name}</Text>
             <View style={styles.priceRow}>

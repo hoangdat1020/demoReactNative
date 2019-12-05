@@ -27,10 +27,12 @@ const Home = createStackNavigator(
   }
 );
 const Cart = createStackNavigator({
-  Cart: CartS
+  Cart: CartS,
+  Details
 });
 const Orders = createStackNavigator({
-  Orders: OrderS
+  Orders: OrderS,
+  Details
 });
 const Settings = createStackNavigator({
   Settings: SettingS

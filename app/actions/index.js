@@ -21,3 +21,25 @@ export const actAddToUser = (username, password) => {
     password
   };
 };
+export const actLikeProduct = product => {
+  return {
+    type: types.LIKE_PRODUCT,
+    product
+  };
+};
+export const actRemoveAll = () => {
+  return {
+    type: types.REMOVE_ALL
+  };
+};
+export const actAddToOrder = data => {
+  return {
+    type: types.ADD_TO_ORDER,
+    data
+  };
+};
+export const actRemoveToOrder = () => {
+  return {
+    type: types.REMOVE_ALL_ORDER
+  };
+};

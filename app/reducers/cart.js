@@ -1,3 +1,5 @@
+/* eslint-disable no-return-assign */
+/* eslint-disable no-fallthrough */
 /* eslint-disable no-shadow */
 /* eslint-disable no-param-reassign */
 import * as types from '../constants/ActionType';
@@ -32,7 +34,8 @@ const cart = (state = initialState, action) => {
         }
       }
       return [...state];
-
+    case types.REMOVE_ALL:
+      return (state = []);
     default:
       return [...state];
   }

@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, View, FlatList} from 'react-native';
 import ProductListItem from '../app/components/ProductListItem';
 import {connect} from 'react-redux';
-import {actAddToCart} from '../app/actions/index';
+import {actAddToCart, actLikeProduct} from '../app/actions/index';
 
 class Category extends React.Component {
   static navigationOptions = ({navigation}) => {
@@ -39,7 +39,7 @@ class Category extends React.Component {
 
   render() {
     const {navigation} = this.props;
-    const {onAddToCart} = this.props;
+    const {onAddToCart, onLikeProduct} = this.props;
 
     return (
       <FlatList
@@ -51,6 +51,7 @@ class Category extends React.Component {
             <ProductListItem
               product={item}
               addToCart={onAddToCart}
+              likeProduct={onLikeProduct}
               onPress={() =>
                 navigation.navigate('Details', {
                   title: item.name,
@@ -86,6 +87,9 @@ const mapAddToCart = dispatch => {
   return {
     onAddToCart: product => {
       dispatch(actAddToCart(product, 1));
+    },
+    onLikeProduct: product => {
+      dispatch(actLikeProduct(product));
     }
   };
 };

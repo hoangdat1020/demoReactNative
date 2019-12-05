@@ -37,6 +37,8 @@ target 'AwesomeProject' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'RNFastImage', :path => '../node_modules/react-native-fast-image'
+
   target 'AwesomeProjectTests' do
     inherit! :search_paths
     # Pods for testing

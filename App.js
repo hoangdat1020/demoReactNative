@@ -7,7 +7,6 @@ import {store, persistor} from './app/store/index';
 import SplashScreen from 'react-native-splash-screen';
 import StackAppNavi from './StackAppNavigator';
 import SwiperO from './screens/SwiperO';
-import IphoneX13 from './app/components/RegisLoginComponent/IphoneX13';
 const AppContainer = createAppContainer(StackAppNavi);
 export default class App extends React.Component {
   componentDidMount() {
@@ -18,9 +17,8 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <SwiperO />
-          {/* <AppContainer /> */}
-          {/* <IphoneX13 /> */}
+          {/* <SwiperO /> */}
+          <AppContainer />
         </PersistGate>
       </Provider>
     );

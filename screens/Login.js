@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text, View, TouchableOpacity, Alert} from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 import {TextInput} from 'react-native-gesture-handler';
 import {connect} from 'react-redux';
@@ -18,18 +18,17 @@ class Login extends React.Component {
 
   navigateRegis = () => {
     this.props.navigation.navigate('Register');
-    alert('register');
+    Alert.alert('register');
   };
 
   handleLogin = (username, password) => {
     // eslint-disable-next-line react/destructuring-assignment
     if (this.state.name === username && this.state.password === password) {
-      // eslint-disable-next-line no-alert
-      alert('OK');
+      Alert.alert('OK');
       // eslint-disable-next-line react/destructuring-assignment
       this.props.navigation.navigate('AppNavigator');
     } else {
-      alert('ERROR');
+      Alert.alert('ERROR');
     }
   };
 
@@ -54,6 +53,7 @@ class Login extends React.Component {
           />
           <TextInput
             placeholder="password"
+            secureTextEntry
             style={styles.input}
             // eslint-disable-next-line no-shadow
             onChangeText={password => this.setState({password})}
