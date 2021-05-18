@@ -15,7 +15,7 @@
     "react-native": "0.61.3",
     "react-native-app-intro": "https://github.com/merryjs/react-native-app-intro",
     "react-native-app-intro-v2": "^2.1.2",
-    "react-native-fast-image": "^7.0.2",
+    "react-native-fast-image": "^8.3.0",
     "react-native-gesture-handler": "^1.5.0",
     "react-native-ionicons": "^4.6.3",
     "react-native-material-dropdown": "^0.11.1",
